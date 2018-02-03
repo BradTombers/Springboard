@@ -1,0 +1,152 @@
+#SQL LIKE
+#queries for rows where group column has "DJ" followed by wildcard text
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" LIKE 'DJ%'
+ 
+#SQL IN
+#queries for rows containing either "M.C. Hammer", "Hammer", or "Elvis Presley" in the group column
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" IN ('M.C. Hammer', 'Hammer', 'Elvis Presley')
+ 
+ #SQL BETWEEN
+#Allows you to specify a range
+
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year BETWEEN 1985 AND 1990
+  
+  #Note that the code below is equivalent
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year >= 1985 AND year <= 1990
+  
+  #SQL IS NULL
+  #Returns rows with null values in specified column
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE song_name IS NULL
+  
+  #SQL AND
+  #Behaves like logical operator and
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year_rank <= 10
+  AND "group" Ilike '%ludacris%'
+  
+  #gets rows for top song in year 1990, 2000, and 2010
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year_rank = 1
+  AND year IN (1990,2000,2010)
+  
+  #returns rows for songs in 1960s with "love" in the title
+
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE song_name ILIKE '%love%' 
+  
+  #SQL OR
+  #Behaves like logical OR
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year_rank <= 10
+  AND ("group" ILIKE '%Katy Perry%' OR "group" ILIKE '%Bon Jovi%')
+  AND year BETWEEN 1960 AND 1969
+  
+  #returns all songs with titles that contain the word "California" in either the 1970s or 1990s.
+  
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE ((year BETWEEN 1970 AND 1979) OR (year BETWEEN 1990 AND 1999))
+  AND song_name ILIKE '%california%'
+  
+  #SQL NOT - if pairing with NULL - IS NOT NULL
+  
+  #returns all rows for songs that were on the charts in 2013 and do not contain the letter "a".
+  SELECT * 
+  FROM tutorial.billboard_top_100_year_end 
+  WHERE year = 2013
+  AND song_name NOT ILIKE '%a%'
+  
+  #SQL ORDER BY
+  #orders table by specified column - DESC makes it descending
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2012
+ ORDER BY song_name DESC
+ 
+ #Comment with -- or /* and *\  
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE (year_rank BETWEEN 10 AND 20) --selects songs ranked between 10 and 20 inclusive
+ AND year IN (1993, 2003, 2013) --selects only songs from specified years
+ ORDER BY year, year_rank --orders the results by year and rank
+ 
+ #COUNT
+ #counts number of rows in column, not including null values
+ SELECT COUNT(year) AS year,
+       COUNT(month) AS month,
+       COUNT(open) AS open,
+       COUNT(high) AS high,
+       COUNT(low) AS low,
+       COUNT(close) AS close,
+       COUNT(volume) AS volume
+  FROM tutorial.aapl_historical_stock_price
+  
+ #Finds avg opening price  
+  SELECT (SUM(open) / COUNT(open)) AS avg_opening_price
+FROM tutorial.aapl_historical_stock_price
+
+SELECT MAX(close - open) AS highest_single_day_increase
+FROM tutorial.aapl_historical_stock_price
+
+#SQL AVG - finds average
+
+ SELECT AVG(volume)
+  FROM tutorial.aapl_historical_stock_price
+  
+ #GROUP BY
+ #Allows you to separate data into groups, which can be aggregated independently
+ SELECT year,
+       COUNT(*) AS count
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY year
+ 
+ #Calculate the total number of shares traded each month. Order your results chronologically.
+ SELECT year,
+       month,
+       SUM(volume) AS total_number_of_shares
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY year, month
+ ORDER BY year, month
+ 
+ # calculate the average daily price change in Apple stock, grouped by year.
+ SELECT year,
+  AVG(close-open) AS avg_daily_change
+  FROM tutorial.aapl_historical_stock_price 
+  GROUP BY year
+  ORDER BY year
+  
+ # calculates the lowest and highest prices that Apple stock achieved each month.
+  SELECT 
+  year, 
+  month,
+  MIN(low) AS monthly_low,
+  MAX(high) AS monthly_high
+  FROM tutorial.aapl_historical_stock_price 
+  GROUP BY year, month
+  ORDER BY year, month
+  
+  
+  
