@@ -5,7 +5,7 @@ Springboard is a community-based learning platform designed to help professional
 Built by industry leaders, the lectures and projects mirror the types of problems seen in the real world.
 
 ### Real Projects
-The 500-600 hour curriculum centers on 8 mini-projects, and 2 capstone projects.
+The 500-600 hour curriculum centers on 8 **[mini-projects](https://github.com/BradTombers/Springboard/tree/master/Mini%20Projects)**, and 2 capstone projects.
 
 Capstone 1 - **[Predicting Home Prices in King County, Washington](https://github.com/BradTombers/Springboard/blob/master/Capstone%201/Capstone1_Project.ipynb)**
 
