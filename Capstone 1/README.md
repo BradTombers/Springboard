@@ -1,6 +1,7 @@
 
 # Predicting Home Prices in King County, Washington
 **[Report](https://github.com/BradTombers/Springboard/blob/master/Capstone%201/Capstone1_Project.ipynb)**
+
 **[Presentation](https://github.com/BradTombers/Springboard/blob/master/Capstone%201/Capstone1_Presentation.pdf)**
 
 ## Objective
