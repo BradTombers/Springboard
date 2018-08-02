@@ -38,5 +38,5 @@ Several datasets are provided containing data about wine offers and the customer
 **[Ultimate Inc. Take Home Challenge](https://github.com/BradTombers/Springboard/blob/master/Mini%20Projects/Ultimate_data_science_challenge.ipynb):**
 Ultimate Technologies Inc. is an American worldwide online transportation network company headquartered in San Francisco, California. Founded by Jarvis Karolick in 2010, it has completely disrupted the taxi and logistics industry, and is one of the most prestigious companies to work for. This challenge has been adapted from an actual Ultimate Inc. data science challenge.
 
-**[Relax Inc. Take Home Challenge](https://github.com/BradTombers/Springboard/blob/master/Mini%20Projects/relax_data_science_challenge.ipynb)
+**[Relax Inc. Take Home Challenge](https://github.com/BradTombers/Springboard/blob/master/Mini%20Projects/relax_data_science_challenge.ipynb):**
 Relax Inc. is a highly funded startup based in San Francisco that makes productivity and project management software that's extremely popular with both individuals and teams. Founded in 2008 by several ex-Facebook employees, it's considered one of the sexiest companies to work for.
