@@ -33,3 +33,6 @@ I learned the basics of text analysis using a subset of movie reviews from the r
 
 **[Customer Segmentation using Clustering](https://github.com/BradTombers/Springboard/blob/master/Mini%20Projects/Mini_Project_Clustering.ipynb):**
 Several datasets are provided containing data about wine offers and the customers that engaged with those offers.  Our goal is to cluster the customers to find what they have in common, in order to ultimately find more similar customers.  Throughout the notebook, I use KMeans, Affinity Propogation, Spectral, Agglomerative, and DBSCAN clustering in an attempt to find the optimal model. In order to choose the appropriate number of clusters, I use the silhoutte method, and generate plots to visualize each case. At the conclusion, I find the the greatest indicator of clustering is the customer's preference of varietal, as well as the minimum quantity required for purchase.  
+
+### Take Home Challenges
+**[Ultimate Inc. Take Home Challenge]():**
